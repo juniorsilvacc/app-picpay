@@ -1,5 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Ionicons, AntDesign} from '@expo/vector-icons';
+
+import PayButton from './components/PayButton';
 
 import HomeScreen from './screens/Home';
 import WalletScreen from './screens/Wallet';
@@ -8,14 +11,57 @@ import PayScreen from './screens/Pay';
 
 const Tab = createBottomTabNavigator();
 
+const icons = {
+    Home: {
+        lib: AntDesign,
+        name: 'home',
+    },
+    Wallet: {
+        lib: AntDesign,
+        name: 'creditcard',
+    },
+    Notifications: {
+        lib: Ionicons,
+        name: 'ios-notifications-outline',
+    },
+    Settings: {
+        lib: AntDesign,
+        name: 'setting',
+    }
+};
+
 export default function Navigation(){
     return(
-        <Tab.Navigator>
+        <Tab.Navigator
+            screenOptions={({route, navigation}) => ({
+                tabBarIcon: ({color, size, focused}) => {
+                    if(route.name == 'Pay'){
+                        return (
+                            <PayButton 
+                            onPress={() => navigation.navigate('Pay') } 
+                            focused={focused}
+                            />
+                        );
+                    }
+
+                    const {lib: Icon, name} = icons[route.name];
+                    return <Icon name={name} size={size} color={color} />
+                },
+            })}
+            tabBarOptions={{
+                style:{
+                    backgroundColor: '#131418',
+                    borderTopColor: 'rgba(255, 255, 255, 0.2)',
+                },
+                activeTintColor: '#FFF',
+                inactiveTintColor: '#92929C'
+            }}
+        >
             <Tab.Screen 
             name="Home"
             component={HomeScreen}
             options={{
-                title: 'Início'
+                title: 'Início',
             }}
             />
 
@@ -23,7 +69,7 @@ export default function Navigation(){
             name="Wallet"
             component={WalletScreen}
             options={{
-                title: 'Carteira'
+                title: 'Carteira',
             }}
             />
 
@@ -31,7 +77,7 @@ export default function Navigation(){
             name="Pay"
             component={PayScreen}
             options={{
-                title: 'Pagar'
+                title: '',
             }}
             />
 
@@ -39,7 +85,7 @@ export default function Navigation(){
             name="Notifications"
             component={WalletScreen}
             options={{
-                title: 'Notificações'
+                title: 'Notificações',
             }}
             />
 
@@ -47,7 +93,7 @@ export default function Navigation(){
             name="Settings"
             component={WalletScreen}
             options={{
-                title: 'Ajustes'
+                title: 'Ajustes',
             }}
             />
         </Tab.Navigator>
