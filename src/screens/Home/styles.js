@@ -14,6 +14,7 @@ export const Header = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin: 10px 0;
 `;
 
 export const BalanceContainer = styled.View`

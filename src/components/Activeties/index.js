@@ -63,7 +63,7 @@ export default function Activeties() {
                 <Datails>
                     <Value>R$ 200.000,00</Value>
                     <Divider />
-                    <Feather name="lock" size={14} color='#FFF' />
+                    <Feather name="lock" size={14} color='rgba(255, 255, 255, .7)' />
                     <Date>há 2 anos</Date>
                 </Datails>
 

@@ -96,7 +96,7 @@ export const Divider = styled.View`
 
 export const Date = styled.Text`
     margin-left: 8px;
-    color: #FFF;
+    color: rgba(255, 255, 255, .7);
 `;
 
 export const Actions = styled.View`
