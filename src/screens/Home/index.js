@@ -5,6 +5,8 @@ import {Wrapper, Container, Header, BalanceContainer, BalanceTitle, Balance} fro
 
 import Suggestions from '../../components/Suggestions';
 import Activeties from '../../components/Activeties';
+import Tips from '../../components/Tips';
+import Banner from '../../components/Banner';
 
 export default function Home(){
     return (
@@ -20,11 +22,16 @@ export default function Home(){
 
                     <AntDesign name="gift" size={30} color="#10C86E" />
                 </Header> 
-                {/*Fim do Header */}
+               
 
                 <Suggestions />
 
                 <Activeties />
+
+               <Tips />
+
+               <Banner />
+
             </Container>
         </Wrapper>
     );

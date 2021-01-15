@@ -38,7 +38,7 @@ export default function Activeties() {
                <OptionTitle>
                     <TitleAll>Todos</TitleAll>
                </OptionTitle>
-               
+
                <OptionTitle>
                     <TitleMy>Minhas</TitleMy>
                </OptionTitle>
