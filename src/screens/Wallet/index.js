@@ -1,8 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Wrapper, Header, HeaderContainer, Title} from './styles';
 
 export default function Wallet(){
     return (
-        <Text>Wallet</Text>
+        <Wrapper>
+            <Header colors={['#52E78C', '#1AB563']}>
+                <HeaderContainer>
+                    <Title>Saldo PicPay</Title>
+                </HeaderContainer>
+            </Header>
+        </Wrapper>
     );
 }
