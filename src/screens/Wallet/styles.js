@@ -20,3 +20,51 @@ export const Title = styled.Text`
     color: #FFF;
     font-size: 16px;
 `;
+
+export const BalanceContainer = styled.View`
+    margin: 8px 0;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const Value = styled.Text`
+    font-size: 38px;
+    color: #FFF;
+    font-weight: 200;
+`;
+
+export const Bold = styled.Text`
+    font-weight: bold;
+`;
+
+export const EyeButton = styled.TouchableOpacity`
+    margin-left: 10px;
+`;
+
+export const Info = styled.Text`
+    flex-direction: column;
+    color: #FFF;
+    font-size: 14px;
+`;
+
+export const Actions = styled.View `
+    flex-direction: row;
+    margin-top: 25px;
+`;
+
+export const Action = styled.TouchableOpacity `
+     flex-direction: row;
+     align-items: center;
+     border: 1px rgba(255, 255, 255, .6);
+     border-radius: 25px;
+     width: 150px;
+     height: 45px;
+     justify-content: center;
+     margin: 0 10px;
+`;
+
+export const ActionLabel = styled.Text `
+    margin-left: 10px;
+    color: #FFF;
+
+`;
