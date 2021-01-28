@@ -139,6 +139,10 @@ export const AddLabel = styled.Text`
     font-weight: bold;
 `;
 
+export const CaddingCont = styled.TouchableOpacity`
+    
+`;
+
 export const CoddingPromo = styled.View`
     align-items: center;
     margin-top: 30px;

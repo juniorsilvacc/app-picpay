@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Feather, MaterialCommunityIcons, FontAwesome, AntDesign} from '@expo/vector-icons';
 import {Switch} from 'react-native';
 
@@ -27,6 +27,7 @@ import {
     Img,
     AddButton,
     AddLabel,
+    CaddingCont,
     CoddingPromo,
     Codding
 } from './styles';
@@ -34,19 +35,34 @@ import {
 import creditCard from '../../images/credit-card.png'
 
 export default function Wallet(){
+
+    const [isVisible, setIsVisible] = useState(true);
+    const [useBalance, setUseBalance] = useState(true);
+
+    function handleToggleVisibility(){
+        setIsVisible((prevState) => !prevState);
+    }
+
+    function handleToggleUseBalance (){
+        setUseBalance((prevState) => !prevState);
+    }
+
     return (
         <Wrapper>
-            <Header colors={['#52E78C', '#1AB563']}>
+            <Header 
+            colors={useBalance ? ['#52E78C', '#1AB563'] : ['#D3D3D3', '#868686']}
+            
+            >
                 <HeaderContainer>
                     <Title>Saldo PicPay</Title>
                     <BalanceContainer>
 
                         <Value>
-                            R$ <Bold>0,00</Bold>
+                            R$ <Bold>{isVisible ? '0,00' : '----'}</Bold>
                         </Value>
 
-                        <EyeButton>
-                            <Feather name="eye" size={24} color="#FFF" />
+                        <EyeButton onPress={handleToggleVisibility}>
+                            <Feather name={isVisible ? 'eye' : 'eye-off'} size={24} color="#FFF" />
                         </EyeButton>
 
                     </BalanceContainer>
@@ -75,7 +91,7 @@ export default function Wallet(){
                     Usar saldo ao pagar
                 </UsBalanceTitle>
 
-                <Switch />
+                <Switch value={useBalance} onValueChange={handleToggleUseBalance} />
                 
             </UseBalance>
 
@@ -107,12 +123,15 @@ export default function Wallet(){
                 </AddButton>
             </Card>
 
-            <CoddingPromo>
-                <MaterialCommunityIcons name="ticket-outline" size={24} color="#0DB060" />
-                <Codding>
-                    Usar código promocional
-                </Codding>
-            </CoddingPromo>
+            <CaddingCont>
+                <CoddingPromo>
+                    <MaterialCommunityIcons name="ticket-outline" size={24} color="#0DB060" />
+                    <Codding>
+                        Usar código promocional
+                    </Codding>
+                </CoddingPromo>
+            </CaddingCont>
+            
 
         </Wrapper>
     );
