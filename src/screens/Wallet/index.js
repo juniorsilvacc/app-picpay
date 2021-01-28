@@ -1,5 +1,5 @@
 import React from 'react';
-import {Feather, MaterialCommunityIcons, FontAwesome} from '@expo/vector-icons';
+import {Feather, MaterialCommunityIcons, FontAwesome, AntDesign} from '@expo/vector-icons';
 import {Switch} from 'react-native';
 
 import {
@@ -18,8 +18,20 @@ import {
     UseBalance,
     UsBalanceTitle,
     PaymentMethods,
-    PaymentMethodsTitle
+    PaymentMethodsTitle,
+    Card,
+    CardBody,
+    CardDetails,
+    CardInfo,
+    CardTitle,
+    Img,
+    AddButton,
+    AddLabel,
+    CoddingPromo,
+    Codding
 } from './styles';
+
+import creditCard from '../../images/credit-card.png'
 
 export default function Wallet(){
     return (
@@ -72,6 +84,35 @@ export default function Wallet(){
                     Formas de pagamento
                 </PaymentMethodsTitle>
             </PaymentMethods>
+
+            <Card>
+                <CardBody>
+                    <CardDetails>
+                        <CardTitle>
+                            Cadastre seu cartão de crédito
+                        </CardTitle>
+                        <CardInfo>
+                            Cadastre um cartão de crédito para poder fazer pagamentos mesmo quando não tiver saldo no seu PicPay.
+                        </CardInfo>
+                    </CardDetails>
+
+                    <Img source={creditCard} resizeMode="contain" />
+                </CardBody>
+
+                <AddButton>
+                    <AntDesign name="pluscircleo" size={30} color="#0DB060" />
+                    <AddLabel>
+                        Adicionar cartão de crédito
+                    </AddLabel>
+                </AddButton>
+            </Card>
+
+            <CoddingPromo>
+                <MaterialCommunityIcons name="ticket-outline" size={24} color="#0DB060" />
+                <Codding>
+                    Usar código promocional
+                </Codding>
+            </CoddingPromo>
 
         </Wrapper>
     );

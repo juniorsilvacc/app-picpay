@@ -93,5 +93,63 @@ export const PaymentMethodsTitle = styled.Text`
     font-size: 12px;
 `;
 
+export const Card = styled.View`
+    background: #1E232A;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+`;
 
+export const CardBody = styled.View`
+    flex-direction: row;
+`;
+
+export const CardDetails = styled.View`
+    flex: 1;
+    margin-right: 20px;
+`;
+
+export const CardTitle = styled.Text`
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+`;
+
+export const CardInfo = styled.Text`
+    font-size: 14px;
+    color: rgba(255, 255, 255, .8);
+    margin-top: 10px;
+`;
+
+export const Img = styled.Image`
+   width: 60px;
+   height: 60px;
+`;
+
+export const AddButton = styled.TouchableOpacity`
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+`;
+
+export const AddLabel = styled.Text`
+    color: #0DB060;
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: bold;
+`;
+
+export const CoddingPromo = styled.View`
+    align-items: center;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+`;
+
+export const Codding = styled.Text`
+    color: #0DB060;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-left: 8px;
+`;
 
