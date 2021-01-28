@@ -66,5 +66,32 @@ export const Action = styled.TouchableOpacity `
 export const ActionLabel = styled.Text `
     margin-left: 10px;
     color: #FFF;
-
 `;
+
+export const UseBalance = styled.View`
+    background: #1C1C1E;
+    height: 60px;
+    flex-direction: row;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const UsBalanceTitle = styled.Text`
+    color: #FFF;
+    font-size: 16px;
+`;
+
+export const PaymentMethods = styled.View`
+    margin-top: 25px;
+    padding: 0 16px;
+`;
+
+export const PaymentMethodsTitle = styled.Text`
+    color: #8E8E93;
+    text-transform: uppercase;
+    font-size: 12px;
+`;
+
+
+
